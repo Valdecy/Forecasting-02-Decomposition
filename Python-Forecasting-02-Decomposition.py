@@ -39,9 +39,8 @@ def moving_average(timeseries, n = 2):
         ma.iloc[i,0]  = float(timeseries.iloc[start:finish,:].sum()/n)
         start  = start  + 1
         finish = finish + 1         
-        last = float(timeseries.iloc[(start-1):(finish-1),:].sum()/n)
-    
-    timeseries = timeseries.iloc[:,0]
+    last = float(timeseries.iloc[(start-1):(finish-1),:].sum()/n)
+
     ma = ma.iloc[:,0] 
     
     return ma, last
@@ -84,7 +83,6 @@ def henderson_seasonal_adjustment(timeseries):
         start  = start  + 1        
     last = ma.iloc[(start - 1),0]  
     
-    timeseries = timeseries.iloc[:,0]
     ma = ma.iloc[:,0]  
     
     return ma, last
