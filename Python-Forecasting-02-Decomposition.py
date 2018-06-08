@@ -120,8 +120,7 @@ def x_11(X, graph = True):
     step_12, _  = moving_average(step_11, n = 5)
     step_13, _  = moving_average(step_12, n = 3)
     step_14     = step_11 / step_13
-    step_15     = step_00 / step_14
-    
+    step_15     = step_00 / step_14   
     
     step_16, _  = moving_average(step_15, n = 12)
     step_17, _  = moving_average(step_16, n = 2)
