@@ -122,10 +122,17 @@ def x_11(X, graph = True):
     step_14     = step_11 / step_13
     step_15     = step_00 / step_14   
     
+    # Trend
     step_16, _  = moving_average(step_15, n = 12)
     step_17, _  = moving_average(step_16, n = 2)
+    step_17     = step_17.rename("Trend")
+    #Seasonality
     step_18     = step_15 / step_17
+    step_18     = step_18.rename("Seasonality")
+    
+    # Error
     step_19     = step_00 - step_15
+    step_19     = step_19.rename("Error")
 
     if graph == True:
         style.use('ggplot')        
@@ -147,10 +154,6 @@ def x_11(X, graph = True):
         plt.bar(X.index, step_19, width = 7, color = 'red')
         plt.ylabel('Error')
         plt.show()
-        
-        step_17 = step_17.rename("Trend")
-        step_18 = step_18.rename("Seasonality")
-        step_19 = step_19.rename("Error")
   
     return step_18, step_17, step_19
     
@@ -164,7 +167,7 @@ X = df.iloc[:,:]
 X = X.set_index(pd.DatetimeIndex(df.iloc[:,0])) # First column as row names
 X = X.iloc[:,1]
 
-# Calling Functions
+# Calling the Function
 decomposition = x_11(X, graph = True)
 
 ########################## End of Code #####################################
