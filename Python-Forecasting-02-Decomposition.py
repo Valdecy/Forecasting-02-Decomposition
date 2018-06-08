@@ -35,22 +35,10 @@ def moving_average(timeseries, n = 2):
     start  = 0 + adjustment
     finish = n + adjustment
     
-    if(n % 2 == 0):
-        weights = [None]*(n)
-        for i in range(0, n):
-            weights[i] = 1/n
-   
-        for i in range(center, len(timeseries) - center):
-            ma.iloc[i, 0] = 0
-            for j in range(0, len(weights)):
-                ma.iloc[i, 0]  = float(ma.iloc[i, 0] + timeseries.iloc[start + j,:]*weights[j])
-            start  = start  + 1        
-        last = ma.iloc[(start - 1),0]  
-    else:
-        for i in range(center, len(timeseries) - center):
-            ma.iloc[i,0]  = float(timeseries.iloc[start:finish,:].sum()/n)
-            start  = start  + 1
-            finish = finish + 1         
+    for i in range(center, len(timeseries) - center):
+        ma.iloc[i,0]  = float(timeseries.iloc[start:finish,:].sum()/n)
+        start  = start  + 1
+        finish = finish + 1         
         last = float(timeseries.iloc[(start-1):(finish-1),:].sum()/n)
     
     timeseries = timeseries.iloc[:,0]
