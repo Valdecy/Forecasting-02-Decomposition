@@ -156,7 +156,7 @@ def x_11(X, graph = True):
         plt.ylabel('Error')
         plt.show()
   
-    return step_18, step_17, step_19
+    return step_17, step_18, step_19
     
 ######################## Part 2 - Usage ####################################
 
