@@ -126,6 +126,7 @@ def x_11(X, graph = True):
     step_16, _  = moving_average(step_15, n = 12)
     step_17, _  = moving_average(step_16, n = 2)
     step_17     = step_17.rename("Trend")
+    
     #Seasonality
     step_18     = step_15 / step_17
     step_18     = step_18.rename("Seasonality")
