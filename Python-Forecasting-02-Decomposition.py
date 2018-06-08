@@ -7,7 +7,7 @@
 # Lesson: Decomposition
 
 # Citation: 
-# PEREIRA, V. (2018). Project: Association Rules, File: Python-Forecasting-02-Decomposition.py, GitHub repository: <https://github.com/Valdecy/Forecasting-02-Decomposition>
+# PEREIRA, V. (2018). Project: Forecasting-02-Decomposition, File: Python-Forecasting-02-Decomposition.py, GitHub repository: <https://github.com/Valdecy/Forecasting-02-Decomposition>
 
 ############################################################################
 
